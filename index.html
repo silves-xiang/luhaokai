@@ -474,6 +474,56 @@
   <!-- top end -->
   
 
+  <a href="/cn/Golang原生rpc（rpc服务端源码解读）/">
+    <h2 class="post-title">
+      Golang原生rpc（rpc服务端源码解读）
+    </h2>
+    <h3 class="post-subtitle">
+      微服务
+    </h3>
+    <div class="post-content-preview">
+      创建rpc接口，需要几个条件
+
+方法的类型是可输出的
+方法的本身也是可输出的
+方法必须有两个参数，必须是输出类型或者是内建类型
+方法的第二个参数是指针类型
+方法返回的类型为error
+
+rpc服务原理分析server端
+
+服务注册
+处理网络调用服务注册通过反射处理，将接口存入到map中，进行调用注册服务两个方法
+
+123func Register (rcvr interface&#123;&......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by 鹿灏楷 on
+    2021-10-29
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#微服务" title="微服务">微服务</a>
+    
+    <a href="/tags/#GO" title="GO">GO</a>
+    
+    <a href="/tags/#rpc" title="rpc">rpc</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/first/">
     <h2 class="post-title">
       first
@@ -546,6 +596,18 @@
     
     
     <a href="/tags/#后端" title="后端" rel="1">后端</a>
+    
+    
+    
+    <a href="/tags/#微服务" title="微服务" rel="1">微服务</a>
+    
+    
+    
+    <a href="/tags/#GO" title="GO" rel="1">GO</a>
+    
+    
+    
+    <a href="/tags/#rpc" title="rpc" rel="1">rpc</a>
     
     
   </div>
@@ -635,6 +697,10 @@
 <div class="widget">
   <ul>
     
+    <a href="cn/Golang%E5%8E%9F%E7%94%9Frpc%EF%BC%88rpc%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%EF%BC%89/">
+      <li>Golang原生rpc（rpc服务端源码解读）</li>
+    </a>
+    
     <a href="cn/first/">
       <li>first</li>
     </a>
@@ -667,7 +733,7 @@
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/10/">October 2021</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li></ul>
 </div>
 
 
