@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/cn/first/</loc>
+    
+    <lastmod>2021-10-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/tags/index.html</loc>
     
     <lastmod>2021-10-29</lastmod>
@@ -58,6 +65,13 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>http://yoursite-url/tags/%E5%90%8E%E7%AB%AF/</loc>
+    <lastmod>2021-10-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>http://yoursite-url/tags/Hexo-Theme-LiveMyLife/</loc>
