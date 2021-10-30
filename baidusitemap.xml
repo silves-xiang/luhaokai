@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite-url/cn/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%99%A8%E2%80%94%E2%80%94git%E5%B8%B8%E7%94%A8%E6%8E%A7%E5%88%B6%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2021-10-30</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite-url/cn/Golang%E5%8E%9F%E7%94%9Frpc%EF%BC%88rpc%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%EF%BC%89/</loc>
     <lastmod>2021-10-29</lastmod>
   </url>
