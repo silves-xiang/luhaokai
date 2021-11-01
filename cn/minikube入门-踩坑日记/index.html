@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/archives/">
+  <link rel="canonical" href="http://yoursite-url/cn/minikube入门-踩坑日记/">
   <title>
     
-      silves-xiang
+      minikube入门+踩坑日记 - silves-xiang
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -239,7 +239,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -247,7 +247,7 @@
           <li>
             <a href="/archive/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -260,7 +260,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -271,7 +271,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -282,7 +282,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -293,32 +293,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="archives/index.html">
-      
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -380,9 +362,9 @@
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
       
     }
 
@@ -404,10 +386,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>鹿灏楷</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">不要人夸颜色好，只留清气满乾坤</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#微服务" title="微服务">微服务</a>
+              
+              <a class="tag" href="/tags/#kubernetes" title="kubernetes">kubernetes</a>
+              
+            </div>
+            <h1>minikube入门+踩坑日记</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by 鹿灏楷 on
+              2021-11-01
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">3</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">830</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -448,341 +464,300 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h2 id="环境搭建">环境搭建</h2>
+<ul>
+<li>minikube</li>
+<li>kubectl</li>
+<li>docker</li>
+</ul>
+<p>下载并配置好环境变量</p>
+<h2 id="运行minikube">运行minikube</h2>
+<p><s>从这里就开始踩坑</s></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube start</span><br></pre></td></tr></table></figure>
+<p>首先这条命令是对的，但是国内的电脑一般访问不到minikube的镜像源，或者访问到也是很慢，所以我们要添加代理或者配置其它镜像源。<br>
+有两种方法使用镜像源<br>
+<strong>第一种（我没有试过）</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">minikube start</span><br><span class="line"><span class="comment">#替换成</span></span><br><span class="line">minikube start --registry-mirror=https://registry.docker-cn.com</span><br><span class="line"><span class="comment">#注意：这里使用的是官方的代理镜像源，可以访问，但是还是不是很快。我配置的是阿里的镜像源</span></span><br><span class="line"><span class="comment">#替换成</span></span><br><span class="line">minikube start --registry-mirror=<span class="string">&quot;https://xxxxxx.mirror.aliyuncs.com&quot;</span></span><br><span class="line"><span class="comment">#注意：你要自己注册阿里云的账号使用自己的镜像源网站，替换掉上面的镜像源网站</span></span><br></pre></td></tr></table></figure>
+<p><strong>第二种</strong><br>
+先开启minikube然后再配置镜像源</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启minikube</span></span><br><span class="line">minikube start</span><br><span class="line"><span class="comment">#进入到minikube 环境</span></span><br><span class="line">minikube ssh</span><br><span class="line"><span class="comment">#环境中有docker，所以我们给docker配置好环境就可以</span></span><br><span class="line"><span class="built_in">cd</span> /etc/docker/</span><br><span class="line">touch daemon.json</span><br><span class="line">vi daemon.json</span><br><span class="line"><span class="comment">#配置你的docker代理，这里就不过多介绍了</span></span><br><span class="line"><span class="comment">#&#123;</span></span><br><span class="line"><span class="comment">#  &quot;registry-mirrors&quot;: [&quot;https://xxxxxxxxx.mirror.aliyuncs.com&quot;]</span></span><br><span class="line"><span class="comment">#&#125;</span></span><br><span class="line"><span class="comment">#重启docker</span></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+<p>现在就可以更快的从网站拉取镜像。</p>
+<h2 id="运行一个服务">运行一个服务</h2>
+<p>这里我们使用luksa/kubia作为我们第一个运行的服务，这个服务返回运行的主机名称</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#运行</span></span><br><span class="line">kubectl run kubia --image=luksa/kubia --port=8080</span><br><span class="line"><span class="comment">#kubia表示这个pod的名称，--image表示镜像名称，--port表示监听的端口</span></span><br></pre></td></tr></table></figure>
+<h2 id="查看服务的运行状态">查看服务的运行状态</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get pods</span><br></pre></td></tr></table></figure>
+<p>这里你有可能和我的不相同，你看到的ready那一栏是0/1，也是正常，因为你是第一次使用这个镜像，就会从镜像源中拉取镜像，所以会慢。<br>
+<img src="https://img-blog.csdnimg.cn/28b3f7f723a04093ac167a7f9d2f3875.png" alt="在这里插入图片描述"></p>
+<h2 id="访问web应用">访问web应用</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kubectl expose pod/kubia --name=kubia-http</span><br><span class="line">minikube service kubia-http</span><br></pre></td></tr></table></figure>
+<p>这样会自动打开浏览器访问web应用。</p>
+<h2 id="水平伸缩应用">水平伸缩应用</h2>
+<p>我们刚才创建了一个pod用于对外访问用，但是如果我们想增加多个pod，用来构建服务，怎么办？</p>
+<p>现在就需要增加服务也就是说水平扩展。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#首先先将之前的pod删除</span></span><br><span class="line">kubectl delete pod/kubia</span><br><span class="line"><span class="comment">#创建deployment类型的服务</span></span><br><span class="line">kubectl create deploy kubia --image=luksa/kubia --port=8080 --replicas=2</span><br><span class="line"><span class="comment">#创建的服务名称是kubia，镜像是luksa/kubia，端口是8080，需要创建2个pod</span></span><br><span class="line"><span class="comment">#现在不是水平扩展服务</span></span><br><span class="line">kubectl scale deploy kubia --replicas=3</span><br><span class="line"><span class="comment">#replicas是将服务扩展成为3个，这里注意只给结果也就是说扩展成3个，并不是增加3个。</span></span><br><span class="line"><span class="comment">#此时看一个pod的数量</span></span><br><span class="line">kubectl get pods</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/606767eb982548c6b02ec2861e059571.png" alt="在这里插入图片描述"><br>
+然后再将这个服务暴露，我们再访问</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建服务</span></span><br><span class="line">kubectl expose deploy kubia --name=kubia-https</span><br><span class="line">minikube service kubia-https</span><br></pre></td></tr></table></figure>
+<p>访问到web服务之后，刷新，可以发现，服务的主机名会变化，也就是说服务内部，有负载均衡。</p>
+<p>现在我们将其中一个pod关闭，观察回发生什么。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kubectl delete podname</span><br><span class="line"><span class="comment">#删除之后，我们再看pod</span></span><br><span class="line">kubectl get pods</span><br></pre></td></tr></table></figure>
+<p>deployment是按照设置好的目标来生成pod，如果其中一个或多个发生错误，会自动重新生成pod。这些pod在集群内创建，消失意味着ip地址发生变化，但是服务地址不会变化。</p>
+<h2 id="查看pod的详细细节">查看pod的详细细节</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl describe namespace/podname</span><br></pre></td></tr></table></figure>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
 
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
-          <span class="tag-text">2021</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            11-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/minikube入门-踩坑日记/" style="color: #0085a1">
-              <span>
-                minikube入门+踩坑日记
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
           
-          <li>
-            11-01
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Go-cap和len/" style="color: #0085a1">
-              <span>
-                Go-cap和len
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/基于kubernetes搭建个人服务/" style="color: #0085a1">
-              <span>
-                基于kubernetes搭建个人服务
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-30
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/版本控制器——git常用控制命令/" style="color: #0085a1">
-              <span>
-                版本控制器——git常用控制命令
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            10-29
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Golang原生rpc（rpc服务端源码解读）/" style="color: #0085a1">
-              <span>
-                Golang原生rpc（rpc服务端源码解读）
-                
-                -- cn
-                
-              </span>
-            </a>
+          <li class="next">
+            <a href="/cn/Go-cap和len/" data-toggle="tooltip" data-placement="top" title="Go-cap和len">Next Post &rarr;</a>
           </li>
           
         </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=minikube入门+踩坑日记&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/minikube入门-踩坑日记/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Nov 01 2021 20:26:22 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
-    </div>
-  </div>
-</div>
 
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
     
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">环境搭建</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%90%E8%A1%8Cminikube"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">运行minikube</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AA%E6%9C%8D%E5%8A%A1"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">运行一个服务</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E7%8A%B6%E6%80%81"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">查看服务的运行状态</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%AE%BF%E9%97%AEweb%E5%BA%94%E7%94%A8"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">访问web应用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B0%B4%E5%B9%B3%E4%BC%B8%E7%BC%A9%E5%BA%94%E7%94%A8"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">水平伸缩应用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8Bpod%E7%9A%84%E8%AF%A6%E7%BB%86%E7%BB%86%E8%8A%82"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">查看pod的详细细节</span></a></li></ol>
+        
+        </div>
+      </aside>
     
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#微服务" title="微服务">微服务</a>
+            
+            <a class="tag" href="/tags/#kubernetes" title="kubernetes">kubernetes</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#微服务" title="微服务" rel="3">微服务</a>
-    
-    
-    
-    <a href="/tags/#GO" title="GO" rel="1">GO</a>
-    
-    
-    
-    <a href="/tags/#rpc" title="rpc" rel="1">rpc</a>
-    
-    
-    
-    <a href="/tags/#git" title="git" rel="1">git</a>
-    
-    
-    
-    <a href="/tags/#kubernetes" title="kubernetes" rel="2">kubernetes</a>
-    
-    
-    
-    <a href="/tags/#docker" title="docker" rel="1">docker</a>
-    
-    
-    
-    <a href="/tags/#Go" title="Go" rel="1">Go</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/love.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Love is love</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/silves-xiang">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../cn/minikube%E5%85%A5%E9%97%A8-%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/">
-      <li>minikube入门+踩坑日记</li>
-    </a>
-    
-    <a href="../cn/Go-cap%E5%92%8Clen/">
-      <li>Go-cap和len</li>
-    </a>
-    
-    <a href="../cn/%E5%9F%BA%E4%BA%8Ekubernetes%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E6%9C%8D%E5%8A%A1/">
-      <li>基于kubernetes搭建个人服务</li>
-    </a>
-    
-    <a href="../cn/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%99%A8%E2%80%94%E2%80%94git%E5%B8%B8%E7%94%A8%E6%8E%A7%E5%88%B6%E5%91%BD%E4%BB%A4/">
-      <li>版本控制器——git常用控制命令</li>
-    </a>
-    
-    <a href="../cn/Golang%E5%8E%9F%E7%94%9Frpc%EF%BC%88rpc%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%EF%BC%89/">
-      <li>Golang原生rpc（rpc服务端源码解读）</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="2021/11/">November 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="2021/10/">October 2021</a><span class="archive-list-count">3</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#rpc">
-      <li>rpc</li>
-    </a>
-    
-    <a href="/categories/#微服务">
-      <li>微服务</li>
-    </a>
-    
-    <a href="/categories/#git">
-      <li>git</li>
-    </a>
-    
-    <a href="/categories/#kubernetes">
-      <li>kubernetes</li>
-    </a>
-    
-    <a href="/categories/#docker">
-      <li>docker</li>
-    </a>
-    
-    <a href="/categories/#微服务">
-      <li>微服务</li>
-    </a>
-    
-    <a href="/categories/#Go">
-      <li>Go</li>
-    </a>
-    
-    <a href="/categories/#minikube">
-      <li>minikube</li>
-    </a>
-    
-    <a href="/categories/#微服务">
-      <li>微服务</li>
-    </a>
-    
-    <a href="/categories/#云原生">
-      <li>云原生</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -947,7 +922,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>

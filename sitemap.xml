@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite-url/cn/minikube%E5%85%A5%E9%97%A8-%E8%B8%A9%E5%9D%91%E6%97%A5%E8%AE%B0/</loc>
+    
+    <lastmod>2021-11-01</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite-url/cn/Go-cap%E5%92%8Clen/</loc>
     
     <lastmod>2021-11-01</lastmod>
@@ -168,6 +175,27 @@
   
   <url>
     <loc>http://yoursite-url/categories/Go/</loc>
+    <lastmod>2021-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/categories/minikube/</loc>
+    <lastmod>2021-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/categories/minikube/%E5%BE%AE%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2021-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/categories/minikube/%E5%BE%AE%E6%9C%8D%E5%8A%A1/%E4%BA%91%E5%8E%9F%E7%94%9F/</loc>
     <lastmod>2021-11-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
